@@ -11,7 +11,7 @@ def get_quote():
   json_data = json.loads(response.text)
   quote = json_data[0]['quote']+'\n'+" -"+json_data[0]['author']+"\n"+ json_data[0]['series']
   return quote
-
+"""
 def get_char():
   response = requests.get("https://www.breakingbadapi.com/api/character/random")
   json_data = json.loads(response.text)
@@ -31,7 +31,7 @@ def get_char():
   char_info = imgSource+'\n'+name+'\n'+
   
   return()
-
+"""
 @client.event
 async def on_ready():
   print('Bot is live as {0.user}'.format(client))
@@ -49,6 +49,8 @@ async def on_message(message):
     await message.channel.send("Yo, yo, yo! 1-4-8-3 to the 3 to the 6 to the 9. representin' the ABQ. What up, Biatch? Leave it at the tone.")
   if msg =='yo quote':
     await message.channel.send(get_quote())
+    """
   if msg =='yo character':
     await message.channel.send(get_char())
+    """
 client.run(os.getenv('TOKEN'))
